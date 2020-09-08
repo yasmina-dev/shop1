@@ -34,7 +34,7 @@ class Product
 
     /**
      * @Assert\NotBlank()
-     * * @Assert\PositiveOrZero
+     * @Assert\PositiveOrZero()
      * @ORM\Column(type="float")
      */
     private $price;

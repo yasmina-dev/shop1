@@ -15,31 +15,31 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 /**
  * @route("/api")
-
  */
-
 class Shope1Controller extends AbstractController
     /**
-     * @route ("produit",name="creatuion","methode"={"POST"}
+     * @route ("/produit",name="creation","methode"={"POST"}
      */
 {
-    public function creation(Request $request,SerializerInterface  $serializer,
-                             ValidatorInterface $validator,
-                             EntityManagerInterface $entityManager)
+    public function creation(
+        Request $request,
+        SerializerInterface $serializer,
+        ValidatorInterface $validator,
+        EntityManagerInterface $entityManager)
     {
-        $data=$request->getContent();
-        $objet=$serializer->deserialize($data,Product::class,"json", [ ObjectNormalizer::DISABLE_TYPE_ENFORCEMENT =>  true]);
+        $data = $request->getContent();
+        $objet = $serializer->deserialize($data,
 
-
-
+            Product::class, "json",
+            [ObjectNormalizer::DISABLE_TYPE_ENFORCEMENT => true]);
 
 
         $errors = $validator->validate($objet);
 
 
-        if($errors->count() > 0) {
+        if ($errors->count() > 0) {
 
-            return  $this->json("il y'a des erreurs", 404);
+            return $this->json("il y'a des erreurs", 404);
         }
 
         $entityManager->persist($objet);
@@ -48,5 +48,5 @@ class Shope1Controller extends AbstractController
         return $this->json($objet, 201);
 
     }
-    }
+}
 
