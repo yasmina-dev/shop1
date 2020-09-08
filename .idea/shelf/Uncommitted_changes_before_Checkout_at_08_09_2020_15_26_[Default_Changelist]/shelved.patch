@@ -1,0 +1,15 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n###> symfony/framework-bundle ###\n/.env.local\n/.env.local.php\n/.env.*.local\n/config/secrets/prod/prod.decrypt.private.php\n/public/bundles/\n/src/preload.php\n/var/\n/vendor/\n###< symfony/framework-bundle ###\n\n###> symfony/phpunit-bridge ###\n.phpunit\n.phpunit.result.cache\n/phpunit.xml\n###< symfony/phpunit-bridge ###\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .gitignore	(revision c2a683308457a0e3ef1570539439ed595e57b55d)
++++ .gitignore	(date 1599571454225)
+@@ -15,3 +15,4 @@
+ .phpunit.result.cache
+ /phpunit.xml
+ ###< symfony/phpunit-bridge ###
++.ideai
+\ No newline at end of file
